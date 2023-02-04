@@ -18,13 +18,15 @@
 
     <div class="box">
         <% for(let i=0 ; i < newItems.length ; i++) { %>
+            <form action="/delete" method="POST">
+                <div class="item">
+                    <input type="checkbox" name="itemName" value="<%=newItems[i] %>" onChange="this.form.submit()">
+                    <p>
+                        <%= newItems[i] %>
+                    </p>
+                </div>
+            </form>
 
-            <div class="item">
-                <input type="checkbox">
-                <p>
-                    <%= newItems[i] %>
-                </p>
-            </div>
 
 
             <% } %>
